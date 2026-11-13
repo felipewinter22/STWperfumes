@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STW PARFUM — Perfumaria selecionada</title>
+  <meta name="description" content="Mostruário de perfumes STW PARFUM. Pronta entrega e sob encomenda, atendimento pelo WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar" id="topbar">
+    <a class="logo" href="#inicio" aria-label="STW PARFUM">STW <span>PARFUM</span></a>
+    <nav aria-label="Principal">
+      <a href="#destaques">Destaques</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-bg" role="img" aria-label="Frasco Scandal em destaque"></div>
+      <div class="hero-content">
+        <h1>STW <em>PARFUM</em></h1>
+        <p>Fragrâncias que ficam na memória de quem passa.</p>
+        <a class="btn btn-gold" href="#catalogo">Ver catálogo</a>
+      </div>
+      <a class="scroll-hint" href="#destaques" aria-label="Rolar para baixo"></a>
+    </section>
+
+    <section class="section" id="destaques">
+      <div class="wrap">
+        <h2 class="reveal">Em destaque</h2>
+        <p class="lead reveal">Uma seleção para começar.</p>
+        <div class="featured" id="featured"></div>
+      </div>
+    </section>
+
+    <section class="section dark" id="catalogo">
+      <div class="wrap">
+        <h2 class="reveal">Catálogo</h2>
+        <p class="lead reveal">Veja o preço e se o perfume está pronto para entrega ou sob encomenda.</p>
+
+        <div class="tools reveal">
+          <label class="search">
+            <span class="sr">Buscar por nome ou marca</span>
+            <input type="search" id="search" placeholder="Buscar por nome ou marca" autocomplete="off">
+          </label>
+          <div class="chips" id="statusFilters" role="group" aria-label="Disponibilidade">
+            <button class="chip active" data-status="todos">Todos</button>
+            <button class="chip" data-status="pronta-entrega">Pronta entrega</button>
+            <button class="chip" data-status="sob-encomenda">Sob encomenda</button>
+          </div>
+          <div class="chips" id="catFilters" role="group" aria-label="Categorias"></div>
+        </div>
+
+        <p class="count" id="count" aria-live="polite"></p>
+        <div class="grid" id="grid"></div>
+        <p class="empty" id="empty" hidden>Nenhum perfume encontrado. Tente outro nome ou limpe os filtros.</p>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona">
+      <div class="wrap">
+        <h2 class="reveal">Como funciona</h2>
+        <ol class="steps">
+          <li class="reveal"><h3>Escolha</h3><p>Navegue pelo catálogo e veja preço e disponibilidade.</p></li>
+          <li class="reveal"><h3>Chame no WhatsApp</h3><p>Toque em “Quero este perfume” e a mensagem já vai pronta.</p></li>
+          <li class="reveal"><h3>Receba</h3><p><strong>Pronta entrega:</strong> combinamos a retirada ou entrega.<br><strong>Sob encomenda:</strong> prazo de <span data-prazo></span>.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section dark contact" id="contato">
+      <div class="wrap center">
+        <h2 class="reveal">Fale com a gente</h2>
+        <p class="lead reveal">Dúvidas, indicações ou encomendas: o atendimento é pelo WhatsApp.</p>
+        <a class="btn btn-gold reveal" id="contactBtn" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <p class="small reveal" id="contactInfo"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">© <span id="year"></span> STW PARFUM. Preços e disponibilidade sujeitos a alteração.</footer>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mNome">
+      <button class="modal-x" data-close aria-label="Fechar">×</button>
+      <div class="modal-img"><img id="mImg" alt=""></div>
+      <div class="modal-info">
+        <span class="badge" id="mBadge"></span>
+        <p class="brand" id="mMarca"></p>
+        <h3 id="mNome"></h3>
+        <p class="meta"><span id="mVolume"></span></p>
+        <p class="price" id="mPreco"></p>
+        <p class="desc" id="mDesc"></p>
+        <a class="btn btn-gold" id="mWhats" target="_blank" rel="noopener"></a>
+      </div>
+    </article>
+  </div>
+
+  <script src="data/config.js"></script>
+  <script src="data/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
